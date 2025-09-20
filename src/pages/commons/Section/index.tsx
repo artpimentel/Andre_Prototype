@@ -3,12 +3,14 @@ import { type ReactNode } from 'react';
 
 interface SectionProps {
     children: ReactNode;
+    className?:string;
 }
 
-function Section({ children }: SectionProps) {
+function Section({ children, className }: SectionProps) {
+    const classes = `${styles.section} ${className || ''}`.trim();
 
     return (
-        <section className={styles.section}>
+        <section className={classes}>
             {children}
         </section>
     );

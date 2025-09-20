@@ -2,10 +2,10 @@ import styles from './styles.module.css'
 
 import Section from '../../../commons/Section'
 
-function Welcome() {
+function Profile() {
 
     return (
-        <Section>
+        <Section className={styles.profile} >
             <div className={styles.layout}>
 
             </div>
@@ -13,4 +13,4 @@ function Welcome() {
     );
 }
 
-export default Welcome;
+export default Profile;

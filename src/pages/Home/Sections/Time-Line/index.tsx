@@ -5,7 +5,7 @@ import Section from '../../../commons/Section'
 function TimeLine() {
 
     return (
-        <Section>
+        <Section className={styles.timeLine}>
             <div className={styles.layout}>
 
             </div>
