@@ -7,3 +7,11 @@
 
     z-index: 1;
 }
+
+.layout {
+    padding: 24px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 24px;
+}

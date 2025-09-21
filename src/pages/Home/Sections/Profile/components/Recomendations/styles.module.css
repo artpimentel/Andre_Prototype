@@ -1,0 +1,26 @@
+.recomendations {
+    background: white;
+    padding: 8px;
+
+    border-radius: 12px;
+    box-shadow: 0 0 4px rgb(0, 0, 0, 0.5);
+
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
+}
+
+.recomendations h3 {
+    margin: 0;
+
+    color: #5f5f5f;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.recomendationsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
