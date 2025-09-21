@@ -1,5 +1,9 @@
 .profile {
-    background: #1f1f1f;
+    background: #F7E7CE;
     height: 100%;
     flex: 1 1 30%;
+
+    box-shadow: 0 0 8px rgb(0, 0, 0, 0.5);
+
+    z-index: 1;
 }
