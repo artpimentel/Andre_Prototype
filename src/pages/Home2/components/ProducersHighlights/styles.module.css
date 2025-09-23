@@ -1,0 +1,9 @@
+.producersHighlights {
+    background: #2f2f2f;
+}
+
+.highlightsList {
+    list-style: none;
+    padding: 8px;
+    margin: 0;
+}

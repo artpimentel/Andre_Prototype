@@ -3,7 +3,7 @@ import Menu from './Sections/Menu'
 import TimeLine from './Sections/Time-Line'
 import Profile from './Sections/Profile'
 
-function Home() {
+function Home1() {
 
     return (
         <main className={styles.layout}>
@@ -14,4 +14,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Home1;

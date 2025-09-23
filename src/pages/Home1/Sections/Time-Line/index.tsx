@@ -18,6 +18,7 @@ function TimeLine() {
                 <div className={styles.feed}>
                     <ul className={styles.feedList}>
                         <FeedPost />
+                        <FeedPost />
                     </ul>
                 </div>
             </div>

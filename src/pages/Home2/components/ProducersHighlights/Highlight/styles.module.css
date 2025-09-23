@@ -1,0 +1,28 @@
+.highlight {
+    height: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    cursor: pointer;
+}
+
+.profilePhoto {
+    background: #F7E7CE;
+    height: 48px;
+    aspect-ratio: 1 / 1;
+    
+    border-radius: 50%;
+    border: solid 2px #FFD700;
+}
+
+.profileName {
+    height: auto;
+    
+    color: white;
+    font-family: sans-serif;
+    font-size: 12px;
+}
