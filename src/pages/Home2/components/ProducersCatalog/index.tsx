@@ -4,8 +4,14 @@ import styles from "./styles.module.css";
 import { IoChevronBackOutline, IoChevronForwardOutline, IoAddOutline } from "react-icons/io5";
 
 import Section from "../../../commons/Section";
-import producers from "./data/producers";
+import type { Producer } from '../../../../types/Producer'
 import CatalogItem from "./catalogItem";
+
+interface ProducersCatalogProps {
+  producers: Producer[];
+  title: string;
+  filter: string;
+}
 
 interface ViewMoreItemProps {
   isActive?: boolean;
@@ -22,14 +28,13 @@ const ViewMoreItem = ({ isActive }: ViewMoreItemProps) => {
     );
 };
 
-function ProducersCatalog() {
+function ProducersCatalog({ producers, title, filter }: ProducersCatalogProps) {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const maxItems = 10;
     const producersToShow =
         producers.length > maxItems ? producers.slice(0, maxItems) : producers;
     const hasMore = producers.length > maxItems;
-
 
     const scrollToIndex = (index: number) => {
         if (!scrollContainerRef.current) return;
@@ -72,18 +77,10 @@ function ProducersCatalog() {
 
     return (
         <Section className={styles.ProducersCatalog}>
-            <h2 className={styles.catalogTitle}>Produtoras Próximas</h2>
+            <h2 className={styles.catalogTitle}>{title} <span>({filter})</span></h2>
 
-            <div className={styles.catalogWrapper}>
-                <button
-                    className={styles.scrollButtonLeft}
-                    onClick={prevItem}
-                    disabled={activeIndex === 0}
-                >
-                    <IoChevronBackOutline />
-                </button>
-
-                <div className={styles.catalogContent} ref={scrollContainerRef}>
+            <div className={styles.catalogContent}>
+                <div className={styles.catalogItens} ref={scrollContainerRef}>
                     {producersToShow.map((producer, index) => (
                         <CatalogItem
                             key={producer.id}
@@ -97,15 +94,25 @@ function ProducersCatalog() {
                     )}
                 </div>
 
-                <button
-                className={styles.scrollButtonRight}
-                onClick={nextItem}
-                disabled={
-                    activeIndex === producersToShow.length + (hasMore ? 1 : 0) - 1
-                }
-                >
-                <IoChevronForwardOutline />
-                </button>
+                <div className={styles.catalogButtons}>
+                    <button
+                        className={styles.scrollButtonLeft}
+                        onClick={prevItem}
+                        disabled={activeIndex === 0}
+                    >
+                        <IoChevronBackOutline />
+                    </button>
+
+                    <button
+                    className={styles.scrollButtonRight}
+                    onClick={nextItem}
+                    disabled={
+                        activeIndex === producersToShow.length + (hasMore ? 1 : 0) - 1
+                    }
+                    >
+                    <IoChevronForwardOutline />
+                    </button>
+                </div>
             </div>
         </Section>
     );

@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './styles.module.css';
+
+import Section from '../../../commons/Section'
 
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
@@ -38,41 +40,44 @@ function HighlightSlider() {
         }, slideInterval);
 
         return () => clearInterval(interval);
-    }, [currentSlide, totalSlides]);
+    });
 
     return (
-        <div className={styles.highlightSlider}>
-            <div
-                className={styles.slideContainer}
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-                {sliderData.map((slide) => (
-                    <img
-                        key={slide.id}
-                        src={slide.src}
-                        alt={slide.alt}
-                        className={styles.slideImage}
-                    />
-                ))}
-            </div>
+        <Section className={styles.highlightSlider}>
+            
+            <div className={styles.slider}>
+                <div
+                    className={styles.slideContainer}
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                    {sliderData.map((slide) => (
+                        <img
+                            key={slide.id}
+                            src={slide.src}
+                            alt={slide.alt}
+                            className={styles.slideImage}
+                        />
+                    ))}
+                </div>
 
-            <div className={styles.controls}>
-                <button onClick={goToPrevSlide}><IoChevronBackOutline /></button>
-                <button onClick={goToNextSlide}><IoChevronForwardOutline /></button>
-            </div>
+                <div className={styles.controls}>
+                    <button onClick={goToPrevSlide}><IoChevronBackOutline /></button>
+                    <button onClick={goToNextSlide}><IoChevronForwardOutline /></button>
+                </div>
 
-            <div className={styles.indicators}>
-                {sliderData.map((_, index) => (
-                    <input
-                        key={index}
-                        type="radio"
-                        name="slider-indicator"
-                        checked={index === currentSlide}
-                        onChange={() => goToSlide(index)}
-                    />
-                ))}
+                <div className={styles.indicators}>
+                    {sliderData.map((_, index) => (
+                        <input
+                            key={index}
+                            type="radio"
+                            name="slider-indicator"
+                            checked={index === currentSlide}
+                            onChange={() => goToSlide(index)}
+                        />
+                    ))}
+                </div>
             </div>
-        </div>
+        </Section>
     );
 }
 
