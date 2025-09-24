@@ -1,5 +1,5 @@
 .catalogItem {
-    height: 192px;
+    height: 160px;
     aspect-ratio: 4 / 3;
 
     border-radius: 16px;
@@ -16,9 +16,9 @@
     transition: 0.25s ease-in-out;
 }
 
-.catalogItem.active {
-    transform: scale(1.1);
-    box-shadow: 0 0 8px #F7E7CE;
+.catalogItem:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px 1px rgb(0, 0, 0);
 
     transition: 0.25s ease-in-out;
 }
