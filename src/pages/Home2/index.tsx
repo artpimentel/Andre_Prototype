@@ -5,6 +5,7 @@ import Footer from '../commons/Footer'
 
 import ProducersHighlights from './components/ProducersHighlights'
 import HighlightSlider from './components/HighlightsSlider'
+import ProducersCatalog from './components/ProducersCatalog'
 
 function Home2() {
 
@@ -14,6 +15,7 @@ function Home2() {
             <main className={styles.layout}>
                 <ProducersHighlights />
                 <HighlightSlider />
+                <ProducersCatalog />
             </main>
             <Footer />
         </>

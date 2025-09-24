@@ -10,9 +10,9 @@ interface Slide {
 }
 
 const sliderData: Slide[] = [
-    { id: 1, src: '/images/photo1.jpg', alt: 'Descrição da foto 1' },
-    { id: 2, src: '/images/photo2.jpg', alt: 'Descrição da foto 2' },
-    { id: 3, src: '/images/photo3.jpg', alt: 'Descrição da foto 3' },
+    { id: 1, src: 'https://www.riosexsite.com/files/banners/14092025_131650.jpg', alt: 'Descrição da foto 1' },
+    { id: 2, src: 'https://www.riosexsite.com/files/banners/14092025_131659.jpg', alt: 'Descrição da foto 2' },
+    { id: 3, src: 'https://www.riosexsite.com/files/banners/14092025_131709.jpg', alt: 'Descrição da foto 3' },
 ];
 
 function HighlightSlider() {
